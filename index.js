@@ -5,8 +5,7 @@ pokemon();
 async function pokemon(){
 
 try{
-   
-   console.log('a')
+
    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=964');
    const data = await response.json()
    const allPokemon =  data.results;
@@ -15,7 +14,6 @@ try{
    }).filter(element=> element !== undefined)
 
    for (const pokemon of pokemonShow){
-      //const showPoke = document.getElementById("Show-poke");
      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
       const data = await response.json()
       const digimon = document.createElement('div');
