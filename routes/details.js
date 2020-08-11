@@ -2,11 +2,12 @@
 
 // API data access
 
-/* pokemon.sprites.other["official-artwork"]["front-default"]
-    pokemon.id
-    pokemon.name 
-    pokemon.moves[i].move.name
+/* pokemonData.sprites.other["official-artwork"]["front-default"]
+    pokemonData.id
+    pokemonData.name 
+    pokemonData.moves[i].move.name
 */
+
 
 let listeningButton = document.querySelector('input[type=button]');
 let searchBarField = document.querySelector('input');
