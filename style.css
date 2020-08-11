@@ -1,3 +1,139 @@
 body {
-  background-color: #FFA;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.pokeImg {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.description {
+  margin: 40px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+.title {
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 72px; font-weight: 400;
+  color: seashell;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: #F1D220;
+  text-shadow: -3px 0 #5961AA, 0 3px #5961AA, 3px 0#5961AA, 0 -3px #5961AA;
+  margin: -20px 0;
+  width: 95%;
+}
+
+.searchBar {
+  border-radius: 5px;
+  color: white;
+  background-color: #EB7B87;
+  border: 0;
+  margin: 20px 40px;
+  justify-items: center;
+  display: flex;
+  width: 80%;
+}
+
+input {
+  color: white;
+  background-color: #EB7B87;
+  border: 0;
+  margin: 20px 40px;
+}
+
+.startBar {
+  background-color: #EB7B87;
+  width: 100%;
+  display: flex;
+  align-items: center;   
+}
+
+.homeButton {
+  display: flex;
+  background-color: transparent;
+  border: 0;
+  background-image: url(https://imgur.com/sQaP2n7);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  object-fit: contain;
+  background-position: 8px 8px;
+}
+
+.homeButton:hover {
+  background-color: transparent;
+}
+
+.moveSet {
+  display: flex;
+  margin: 0 100px;    
+}
+
+.card {
+  border-radius: 10px;
+  background-color: #97C7AF;
+  font-size: 10px;
+  margin: 15px 30px;
+  padding: 15px 30px;
+  transition: 0.5s;
+}
+
+
+.card:hover {
+  background-color: springgreen;
+}
+
+.cell {
+  margin: 0 20px;
+  width: 90%;
+}
+
+h4 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+input[type=search], div.button {  
+  width: 100%;
+  height: 35px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type=search] {
+  margin: 0;
+  padding: 0 10px;
+  background-color:trans
+  border: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+div.button {
+  line-height: 35px;
+  margin: 0;
+  padding: 0 20px;
+  color: #fff;
+  background-color: #FF1717;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  white-space: nowrap;
 }
