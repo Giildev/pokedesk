@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     pokemon();
     async function pokemon() {
         try {
-            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=964');
+            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=807');
             const data = await response.json()
                 const allPokemon = data.results;
+                console.log(allPokemon)
             let pokemonShow = [];
             let random;
             for (i = 0; i < 10; i +=1) {
@@ -21,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 digimon.classList.add('Pokemon');
                 const digimonText = document.createElement('h1');
                 const digimonImg = document.createElement('img')
-                const pokeSprite = data.sprites.front_default;
+                const pokeSprite = `https://pokeres.bastionbot.org/images/pokemon/${data.id}.png`
+                //data.sprites.front_default;
                 digimonImg.src = pokeSprite;
                 const pokeName = data.name[0].toUpperCase() + data.name.substring(1);
                 digimonText.textContent = pokeName
