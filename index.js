@@ -2,14 +2,14 @@
 
 // API data access
 
-/* pokemon.sprite.other["official-artwork"]["front-default"]
+/* pokemon.sprites.other["official-artwork"]["front-default"]
     pokemon.id
     pokemon.name 
     pokemon.moves[i].move.name
 */
 
-let listeningButton; // = document.querySelector(PENDING);
-let searchBarField; // = document.querySelector(PENDING)  ;
+let listeningButton = document.querySelector('input[type=button]');
+let searchBarField = document.querySelector('input');
 
 listeningButton.addEventListener("click", sendRequest);
 // searchBarField.addEventListener("keydown", sendRequest);
@@ -21,15 +21,17 @@ function sendRequest(eventType) {
 
         .then((pokemonData) => {
 
-            // document.querySelector(PENDING).src = pokemon.sprite.other["official-artwork"]["front-default"];
-            // document.querySelector(PENDING).src = `#${pokemon.id pokemon.name}`
-            // document.querySelectorAll(PENDING).forEach((moveBox, index) => { moveBox.textContent = `${pokemon.moves[index].move.name}` })  
+            document.querySelector('div.descriptionImg img').src = pokemonData.sprites.other["official-artwork"]["front_default"];
+            document.querySelector('.Name').textContent = pokemonData.name
+            document.querySelector('.Number').textContent = `#${pokemonData.id}`
+
+            document.querySelectorAll('h4').forEach((moveBox, index) => { moveBox.textContent = `${pokemonData.moves[index].move.name}` })
 
 
-            /* pokemon.sprite.other["official-artwork"]["front-default"]
-                pokemon.id
-                pokemon.name 
-                pokemon.moves[i].move.name
+            /* pokemonData.sprites.other["official-artwork"]["front-default"]
+                pokemonData.id
+                pokemonData.name 
+                pokemonData.moves[i].move.name
             */
 
 
