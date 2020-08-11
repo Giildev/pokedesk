@@ -3,5 +3,11 @@ body {
 }
 .Pokemon{
    display:grid;
-   grid-template-columns:7em auto;
+   grid-template-columns:12em auto;
+}
+.Pokemon img{
+   width:9em;
+   height:9em;
+   
+   
 }
