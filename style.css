@@ -6,7 +6,6 @@ body {
   justify-items: center;
   text-align: center;
   margin: 40px 0;
-
 }
 
 .pokeImg {
@@ -56,15 +55,13 @@ input {
   background-color: #EB7B87;
   border: 0;
   margin: 20px 40px;
-
 }
 
 .startBar {
   background-color: #EB7B87;
   width: 100%;
   display: flex;
-  align-items: center;
-      
+  align-items: center;   
 }
 
 .homeButton {
@@ -119,15 +116,12 @@ input[type=search], div.button {
   height: 35px;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  
 }
 
 input[type=search] {
   margin: 0;
   padding: 0 10px;
-  
   background-color:trans
-  
   border: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -135,15 +129,11 @@ input[type=search] {
 
 div.button {
   line-height: 35px;
-
   margin: 0;
   padding: 0 20px;
-
   color: #fff;
   background-color: #FF1717;
-  
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  
   white-space: nowrap;
 }
