@@ -1,3 +1,7 @@
 body {
   background-color: #FFA;
 }
+.Pokemon{
+   display:grid;
+   grid-template-columns:7em auto;
+}
