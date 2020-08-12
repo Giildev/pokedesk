@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
             let pokemonShow = [];
             let random;
             for (i = 0; i < 10; i +=1) {
-               do{
+                do{
                   random = Math.floor(Math.random() * allPokemon.length)
-               }while(pokemonShow.includes(allPokemon[random].name))
+                }while(pokemonShow.includes(allPokemon[random].name))
                 pokemonShow.push(allPokemon[random].name)
             }
             for (const pokemon of pokemonShow) {

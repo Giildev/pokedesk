@@ -1,3 +1,4 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap'); */
 body {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
@@ -9,14 +10,12 @@ body {
 
 }
 .Pokemon{
-   display:grid;
-   grid-template-columns:12em auto;
+  display:grid;
+  grid-template-columns:12em auto;
 }
 .Pokemon img{
-   width:9em;
-   height:9em;
-   
-   
+  width:9em;
+  height:9em;
 }
 .pokeImg {
   width: 100px;

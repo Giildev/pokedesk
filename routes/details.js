@@ -9,32 +9,44 @@
 */
 
 
-let listeningButton = document.querySelector('input[type=button]');
-let searchBarField = document.querySelector('input');
+// Reduce verbosity
+
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+
+const listeningButton = $('input[type=button]');
+const searchBarField = $('input');
 
 listeningButton.addEventListener("click", sendRequest);
-// searchBarField.addEventListener("keydown", sendRequest);
+// searchBarField.addEventListener("keydown", sendRequest); TODO
 
 function sendRequest(eventType) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${searchBarField.value}`)
+
+    // TODO diferentiation of procedure by eventType
+
+    fetch(`https://pokeapi.co/api/v2/pokemon/${searchBarField.value.toLowerCase()}`)
 
         .then((res) => res.json())
 
         .then((pokemonData) => {
 
-            document.querySelector('div.descriptionImg img').src = pokemonData.sprites.other["official-artwork"]["front_default"];
-            document.querySelector('.Name').textContent = pokemonData.name
-            document.querySelector('.Number').textContent = `#${pokemonData.id}`
+            $('div.descriptionImg img').src = pokemonData.sprites.other["official-artwork"]["front_default"];
+            $('.Name').textContent = pokemonData.name
+            $('.Number').textContent = `#${pokemonData.id}`
 
-            document.querySelectorAll('h4').forEach((moveBox, index) => { moveBox.textContent = `${pokemonData.moves[index].move.name}` })
+            $$('h4').forEach((moveBox, index) => { moveBox.textContent = `${pokemonData.moves[index].move.name}` })
 
 
-            /* pokemonData.sprites.other["official-artwork"]["front-default"]
+            /* 
+                pokemonData.sprites.other["official-artwork"]["front-default"]
                 pokemonData.id
                 pokemonData.name 
                 pokemonData.moves[i].move.name
             */
 
 
-        });
+        })
+
+        .catch((error) => { alert('${searchBarField.value} no es un pokemon válido') });
 }
