@@ -3,17 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     pokemon();
     async function pokemon() {
         try {
-            const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=807');
-            const data = await response.json()
-                const allPokemon = data.results;
-                console.log(allPokemon)
             let pokemonShow = [];
             let random;
             for (i = 0; i < 10; i +=1) {
                do{
-                  random = Math.floor(Math.random() * allPokemon.length)
-               }while(pokemonShow.includes(allPokemon[random].name))
-                pokemonShow.push(allPokemon[random].name)
+                  random = Math.floor((Math.random() * 806) + 1)
+               }while(pokemonShow.includes(random))
+                pokemonShow.push(random)
             }
             for (const pokemon of pokemonShow) {
                 const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
