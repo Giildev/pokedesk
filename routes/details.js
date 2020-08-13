@@ -15,13 +15,15 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 
-// const listeningButton = $('#Home');
+const listeningButton = $('#search');
 const searchBarField = $('input');
 
-// listeningButton.addEventListener("click", sendRequest);
+listeningButton.addEventListener("click", sendRequest);
 // searchBarField.addEventListener("keydown", sendRequest); TODO
 
 function sendRequest(eventType) {
+
+    eventType.preventDefault()
 
     // TODO diferentiation of procedure by eventType
 
