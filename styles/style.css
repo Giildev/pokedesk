@@ -61,6 +61,7 @@ body {
 .pokeball-search {
   max-width: 50px;
   max-height: 50px;
+  cursor:pointer;
 }
 
 .input {
@@ -87,6 +88,9 @@ body {
 .Pokemon img{
   width:9em;
   height:9em;
+}
+.Pokemon h1{
+  margin-top: 1.75em;
 }
 .pokeImg {
   width: 100px;

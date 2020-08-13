@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const pokemonName = pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)
                 
                 $('div.descriptionImg img').src = pokemonData.sprites.other["official-artwork"]["front_default"];
+                $('div.descriptionImg img').alt ="Pokemon \n Image";
                 $('.Name').textContent = pokemonName
                 $('.Number').textContent = `#${pokemonData.id}`
                 const numberOfMoves = pokemonData.moves.length
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     moveBox.appendChild(moveDescription)
                     $('div.moveSet').appendChild(moveBox) 
                 } 
+            }).catch((error) => { alert(`${localStorage.getItem('selected')} no es un pokemon válido`)
             })
                    
                    
@@ -78,6 +80,7 @@ function sendRequest(eventType) {
              const pokemonName = pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)
                 
                 $('div.descriptionImg img').src = pokemonData.sprites.other["official-artwork"]["front_default"];
+                $('div.descriptionImg img').alt ="Pokemon \n Image";
                 $('.Name').textContent = pokemonName
                 $('.Number').textContent = `#${pokemonData.id}`
                 const cardToRemove =  $('div.moveSet').children.length

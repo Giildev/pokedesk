@@ -1,8 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     const showPoke = document.getElementById("Show-poke");
+
+     const pokeSearch = document.getElementById('search');
+             
+            pokeSearch.addEventListener('click', function() {
+            const pokeName = document.getElementsByClassName('searchBar')[0].firstElementChild.firstElementChild.value
+            localStorage.setItem('selected', pokeName.toLowerCase())
+             window.open('./details.html', '_self');
+            })
+            
+    
+    
     pokemon();
     async function pokemon() {
         try {
+           
             let pokemonShow = [];
             let random;
             for (i = 0; i < 10; i +=1) {
@@ -33,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 showPoke.appendChild(digimon)
 
             }
-
+           
 
         } catch (err) {
             console.log(err);
