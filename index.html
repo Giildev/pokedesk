@@ -10,25 +10,27 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="startBar">
-      <div class="title">Pokedex</div>
-      <div class="homeButton">
-        <img src="https://i.imgur.com/sQaP2n7.png" alt="" />
-        <button class="homeButton" id="Home"></button>
-      </div>
-    </div>
+  <header class="startBar">
+    <h1 class="title">Pokedex</h1>
+    <!-- <div class="homeButton">
+      <img src="https://i.imgur.com/sQaP2n7.png" alt="" />
+      <button class="homeButton" id="Home"></button>
+    </div> -->
+  </header>
 
-    <div class="searchBar">
+  <main class="container">
+    <section class="searchBar">
       <div class="cell">
-        <input type="search" placeholder="Search" />
-        <img src="" alt="">
+        <input class="input" type="search" placeholder="Search..." />
+        <a href="https://www.google.com" target="blank"><img src="./images/search.png" alt="search pokeball"
+            class="pokeball-search"></a>
         <!-- <input type="button" value="press" /> -->
       </div>
-    </div>
+      </div>
+    </section>
 
     <div id="Show-poke"></div>
-  </div>
+  </main>
 </body>
 
 </html>

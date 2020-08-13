@@ -1,18 +1,89 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap'); */
-body {
-  font-family: 'Lato', sans-serif;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-  margin: 40px 0;
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
 
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }
+
+.startBar {
+  background-color: #EB7B87;
+  width: 100%;
+  display: flex;
+  justify-content: center;     
+}
+
+.title, .title--details {
+  font-family: 'Pokemon', sans-serif;
+  font-size: 50px; 
+  color: #F1D220;
+  text-shadow: -2px 0 #5961AA, 0 3px #5961AA, 7px 0#5961AA, 0 -3px #5961AA;
+  margin: 0;
+}
+
+.startBar--details {
+  background-color: #EB7B87;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title--details {
+  margin-left: 32rem;
+}
+
+.home-img {
+  margin-right: 2rem;
+  margin-top: 2rem;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.homeButton:hover {
+  background-color: transparent;
+}
+
+.searchBar {
+  border-radius: 5px;
+  color: white;
+  background-color: #EB7B87;
+  border: 0;
+  margin: 20px 40px;
+  display: flex;
+  width: 80%;
+}
+
+.cell {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokeball-search {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.input {
+  background-color: #EB7B87;
+  border: 0;
+}
+
+.input::placeholder {
+  color:#fff;
+  font-size: 1rem;
+  width: 100%;
+  margin: 20px 40px;
+}
+
+.input:focus {
+  outline: none;
+}
+
 .Pokemon{
   display:grid;
   grid-template-columns:12em auto;
 }
+
 .Pokemon img{
   width:9em;
   height:9em;
@@ -33,64 +104,6 @@ body {
   width: 100%;
   justify-items: center;
   align-items: center;
-}
-
-.title {
-  font-family: 'Pokemon Solid', sans-serif;
-  font-size: 72px; font-weight: 400;
-  color: seashell;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  color: #F1D220;
-  text-shadow: -3px 0 #5961AA, 0 3px #5961AA, 3px 0#5961AA, 0 -3px #5961AA;
-  margin: -20px 0;
-  width: 95%;
-}
-
-.searchBar {
-  border-radius: 5px;
-  color: white;
-  background-color: #EB7B87;
-  border: 0;
-  margin: 20px 40px;
-  justify-items: center;
-  display: flex;
-  width: 80%;
-}
-
-input {
-  color: white;
-  background-color: #EB7B87;
-  border: 0;
-  margin: 20px 40px;
-
-}
-
-.startBar {
-  background-color: #EB7B87;
-  width: 100%;
-  display: flex;
-  align-items: center;
-      
-}
-
-.homeButton {
-  display: flex;
-  background-color: transparent;
-  border: 0;
-  background-image: url(https://imgur.com/sQaP2n7);
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  object-fit: contain;
-  background-position: 8px 8px;
-}
-
-.homeButton:hover {
-  background-color: transparent;
 }
 
 .moveSet {
@@ -122,22 +135,23 @@ h4 {
   margin: 10px 0;
 }
 
-input[type=search], div.button {  
+/* input[type=search],  */
+div.button {  
   width: 100%;
   height: 35px;
-  -moz-box-sizing: border-box;
+  /* -moz-box-sizing: border-box; */
   box-sizing: border-box;
   
 }
 
-input[type=search] {
+/* input[type=search] {
   margin: 0;
   padding: 0 10px;
     
   border: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-}
+} */
 input[type=button] {
 
   box-shadow: 0 0 4px gray ;

@@ -15,10 +15,10 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 
-const listeningButton = $('input[type=button]');
+// const listeningButton = $('#Home');
 const searchBarField = $('input');
 
-listeningButton.addEventListener("click", sendRequest);
+// listeningButton.addEventListener("click", sendRequest);
 // searchBarField.addEventListener("keydown", sendRequest); TODO
 
 function sendRequest(eventType) {
