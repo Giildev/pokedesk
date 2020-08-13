@@ -85,5 +85,5 @@ function sendRequest(eventType) {
 
         })
 
-        .catch((error) => { alert('${searchBarField.value} no es un pokemon válido') });
+        .catch((error) => { alert(`${searchBarField.value} no es un pokemon válido`) });
 }

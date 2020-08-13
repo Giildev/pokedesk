@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 digimon.appendChild(digimonImg)
                 digimon.appendChild(digimonText)
                 digimon.addEventListener('click', function () {
-                    localStorage.setItem('selected', this.children[1].textContent.toLowerCase())
+                    localStorage.setItem('selected', pokeName.toLowerCase())
                     window.open('./details.html', '_self');
                 })
                 showPoke.appendChild(digimon)
