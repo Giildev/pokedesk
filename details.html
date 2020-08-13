@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <title>Pokemon</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+  <header class="startBar--details">
+    <h1 class="title--details">Pokedex</h1>
+    <a href="/index.html"><img class="home-img" src="./images/casa.png" alt="home button" /></a>
+    <!-- <button class="homeButton" id="Home"></button> -->
+  </header>
+
+  <main class="container">
+    <section class="searchBar">
+      <div class="cell">
+        <input class="input" type="search" placeholder="Search..." />
+        <!-- <input type="button" value="press" /> -->
+        <a href="" target="blank" id="search"><img src="./images/search.png" alt="search pokeball"
+            class="pokeball-search"></a>
+      </div>
+    </section>
+
+    <div class="descriptionImg">
+      <img
+        src="https://vignette.wikia.nocookie.net/es.pokemon/images/4/43/Bulbasaur.png/revision/latest?cb=20170120032346"
+        class="pokeImg" alt="Pokemon Img" />
+    </div>
+
+    <div class="description">
+      <div class="Name">
+        Bulbasaur
+      </div>
+      <div class="Number">
+        #001
+      </div>
+    </div>
+
+    <div class="moveSet"></div>
+    <div id="Show-poke"></div>
+    </div>
+  </main>
+
+  <script src="./routes/details.js"></script>
+</body>
+
+</html>
