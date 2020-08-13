@@ -8,29 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
             .then((res) => res.json())
 
             .then((pokemonData) => {
-
+                const pokemonName = pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)
+                
                 $('div.descriptionImg img').src = pokemonData.sprites.other["official-artwork"]["front_default"];
-                $('.Name').textContent = pokemonData.name
+                $('.Name').textContent = pokemonName
                 $('.Number').textContent = `#${pokemonData.id}`
-
-                $$('h4').forEach((moveBox, index) => { moveBox.textContent = `${pokemonData.moves[index].move.name}` })
-
-
+                const numberOfMoves = pokemonData.moves.length
+                const cardsToCreate = numberOfMoves < 3 ? numberOfMoves : 3;
+                if(cardsToCreate === 0)return;
+                for(let i = 0; i < cardsToCreate; i+=1){
+                    const moveBox = document.createElement('div')
+                    moveBox.classList.add("card")
+                    const moveName = document.createElement('h4')
+                    const moveDescription = document.createElement('p')
+                    const move = pokemonData.moves[i].move.name[0].toUpperCase() + pokemonData.moves[i].move.name.substring(1);
+                    moveName.textContent = move;
+                    moveDescription.textContent = 'Move1 Move2 Move3'
+                    moveBox.appendChild(moveName)
+                    moveBox.appendChild(moveDescription)
+                    $('div.moveSet').appendChild(moveBox) 
+                } 
+            })
+                   
+                   
+                   
+    }
                 /* 
                     pokemonData.sprites.other["official-artwork"]["front-default"]
                     pokemonData.id
                     pokemonData.name 
                     pokemonData.moves[i].move.name
                 */
-
-
-            })
-
-
-
-
-    }
-
 })
 
 // search bar listener
@@ -67,14 +75,33 @@ function sendRequest(eventType) {
         .then((res) => res.json())
 
         .then((pokemonData) => {
-
-            $('div.descriptionImg img').src = pokemonData.sprites.other["official-artwork"]["front_default"];
-            $('.Name').textContent = pokemonData.name
-            $('.Number').textContent = `#${pokemonData.id}`
-
-            $$('h4').forEach((moveBox, index) => { moveBox.textContent = `${pokemonData.moves[index].move.name}` })
-
-
+             const pokemonName = pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1)
+                
+                $('div.descriptionImg img').src = pokemonData.sprites.other["official-artwork"]["front_default"];
+                $('.Name').textContent = pokemonName
+                $('.Number').textContent = `#${pokemonData.id}`
+                const cardToRemove =  $('div.moveSet').children.length
+                for(let i = 0; i < cardToRemove; i += 1){
+                   
+                   $('div.moveSet').removeChild($('div.moveSet').firstChild)
+                   
+                }
+                const numberOfMoves = pokemonData.moves.length
+                const cardsToCreate = numberOfMoves < 3 ? numberOfMoves : 3;
+                if(cardsToCreate === 0)return;
+                for(let i = 0; i < cardsToCreate; i+=1){
+                    const moveBox = document.createElement('div')
+                    moveBox.classList.add("card")
+                    const moveName = document.createElement('h4')
+                    const moveDescription = document.createElement('p')
+                    const move = pokemonData.moves[i].move.name[0].toUpperCase() + pokemonData.moves[i].move.name.substring(1);
+                    moveName.textContent = move;
+                    moveDescription.textContent = 'Move1 Move2 Move3'
+                    moveBox.appendChild(moveName)
+                    moveBox.appendChild(moveDescription)
+                   // moveBox.textContent = 'Move1 Move2 Move3'
+                    $('div.moveSet').appendChild(moveBox) 
+                } 
             /* 
                 pokemonData.sprites.other["official-artwork"]["front-default"]
                 pokemonData.id
