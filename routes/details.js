@@ -1,3 +1,38 @@
+// funcionalidad malandra con localstorage
+document.addEventListener('DOMContentLoaded', () => {
+
+    if (localStorage.getItem('selected')) {
+
+        fetch(`https://pokeapi.co/api/v2/pokemon/${localStorage.getItem('selected')}`)
+
+            .then((res) => res.json())
+
+            .then((pokemonData) => {
+
+                $('div.descriptionImg img').src = pokemonData.sprites.other["official-artwork"]["front_default"];
+                $('.Name').textContent = pokemonData.name
+                $('.Number').textContent = `#${pokemonData.id}`
+
+                $$('h4').forEach((moveBox, index) => { moveBox.textContent = `${pokemonData.moves[index].move.name}` })
+
+
+                /* 
+                    pokemonData.sprites.other["official-artwork"]["front-default"]
+                    pokemonData.id
+                    pokemonData.name 
+                    pokemonData.moves[i].move.name
+                */
+
+
+            })
+
+
+
+
+    }
+
+})
+
 // search bar listener
 
 // API data access
