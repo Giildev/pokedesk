@@ -123,13 +123,32 @@ function sendRequest(eventType) {
                    console.log(moveData);
                      });
                                                                                 //hasta aca tengo los tres movimientos 
-                  /*   if (searchMove.length <2) 
-                     .then{ 
-                       // document.createElement('p') si hago un lenght puedo concatenar la creacion delgit  <p>?? 
-                    document.write(typeof <p>) ???
+                      if(searchMove.length >2){
+                        const mov1 = pokemonData.moves[0].move.url
+                        const mov2 = pokemonData.moves[1].move.url
+                        const mov3 = pokemonData.moves[2].move.url
                     };
-  });*/
-                } 
+                    fetch('pokemonData.moves[0].move.url')
+                    .then(res => res.json())
+                     .then(moveData => {
+                        document.createElement('p');
+                     });
+
+                     fetch(' pokemonData.moves[1].move.url')
+                     .then(res => res.json())
+                      .then(moveData => {
+                         document.createElement('p');
+                        });
+
+                        fetch('pokemonData.moves[2].move.url')
+                     .then(res => res.json())
+                      .then(moveData => {
+                         document.createElement('p');
+                        });
+                        const mov1 = document.createElement('p')
+                        const mov2 = document.createElement('p')
+                        const mov3 = document.createElement('p')
+                        } 
             /* 
                 pokemonData.sprites.other["official-artwork"]["front-default"]
                 pokemonData.id
