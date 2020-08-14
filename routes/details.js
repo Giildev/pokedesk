@@ -101,7 +101,7 @@ function sendRequest(eventType) {
                     moveBox.appendChild(moveDescription)
                    // moveBox.textContent = 'Move1 Move2 Move3'
                    $('div.moveSet').appendChild(moveBox) 
-                   
+        
                    const searchMove= pokemonData.moves[0].move.url;
                    fetch('searchMove')
                     .then(res => res.json())
@@ -123,7 +123,7 @@ function sendRequest(eventType) {
                    console.log(moveData);
                      });
                                                                                 //hasta aca tengo los tres movimientos 
-                      if(searchMove.length >2){
+                      if(searchMove.length >= 2){
                         const mov1 = pokemonData.moves[0].move.url
                         const mov2 = pokemonData.moves[1].move.url
                         const mov3 = pokemonData.moves[2].move.url
@@ -131,19 +131,19 @@ function sendRequest(eventType) {
                     fetch('pokemonData.moves[0].move.url')
                     .then(res => res.json())
                      .then(moveData => {
-                        document.createElement('p');
+                       console.log('moveData');
                      });
 
                      fetch(' pokemonData.moves[1].move.url')
                      .then(res => res.json())
                       .then(moveData => {
-                         document.createElement('p');
+                        console.log('moveData');
                         });
 
                         fetch('pokemonData.moves[2].move.url')
                      .then(res => res.json())
                       .then(moveData => {
-                         document.createElement('p');
+                        console.log('moveData');
                         });
                         const mov1 = document.createElement('p')
                         const mov2 = document.createElement('p')
