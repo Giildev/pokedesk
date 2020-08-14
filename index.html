@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Pokedesk</title>
-  </head>
-  <body>
-    <h1>Pokedesk</h1>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/style.css" />
+  <script src="./routes/index.js"></script>
+  <title>Pokedesk</title>
+</head>
+
+<body>
+  <header class="startBar">
+    <h1 class="title">Pokedex</h1>
+    <!-- <div class="homeButton">
+      <img src="https://i.imgur.com/sQaP2n7.png" alt="" />
+      <button class="homeButton" id="Home"></button>
+    </div> -->
+  </header>
+
+  <main class="container">
+    <section class="searchBar">
+      <div class="cell">
+        <input class="input" type="search" placeholder="Search..." />
+        <div id="search"><img src="./images/search.png" alt="search pokeball"
+            class="pokeball-search"
+            ></div>
+        <!-- <input type="button" value="press" /> -->
+      </div>
+      </div>
+    </section>
+
+    <div id="Show-poke"></div>
+  </main>
+</body>
+
 </html>
