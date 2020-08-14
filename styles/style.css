@@ -7,70 +7,84 @@ body {
 }
 
 .startBar {
-  background-color: #EB7B87;
+  background-color: #eb7b87;
   width: 100%;
   display: flex;
-  justify-content: center;     
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  padding-top: 10px;
 }
 
-.title, .title--details {
-  font-family: 'Pokemon', sans-serif;
-  font-size: 50px; 
-  color: #F1D220;
-  text-shadow: -2px 0 #5961AA, 0 3px #5961AA, 7px 0#5961AA, 0 -3px #5961AA;
-  margin: 0;
+.title {
+  font-size: 72px;
+  font-weight: 400;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 95%;
 }
 
-.startBar--details {
-  background-color: #EB7B87;
-  width: 100%;
+.title-details {
+  margin-right: 4rem;
+}
+
+.homeButton {
   display: flex;
-  justify-content: space-between;
-}
-
-.title--details {
-  margin-left: 32rem;
-}
-
-.home-img {
-  margin-right: 2rem;
-  margin-top: 2rem;
-  max-width: 50px;
-  max-height: 50px;
+  background-color: transparent;
+  border: 0;
+  background-image: url(https://imgur.com/sQaP2n7);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2.2em;
+  padding: 10px;
+  object-fit: contain;
+  background-position: 8px 8px;
+  margin-right: 50px;
 }
 
 .homeButton:hover {
   background-color: transparent;
 }
 
+.homeButton img {
+  height: 3rem;
+}
+
 .searchBar {
-  border-radius: 5px;
+  border-radius: 7px;
   color: white;
-  background-color: #EB7B87;
+  background-color: #eb7b87;
   border: 0;
-  margin: 20px 40px;
+  margin: 30px 40px;
+  justify-items: center;
   display: flex;
-  width: 80%;
+  width: 88%;
+  height: 41px;
+  justify-content: space-around;
 }
 
 .cell {
+  margin: 0;
+  width: 98%;
   display: flex;
-  justify-content: space-between;
+  justify-content: baseline;
 }
 
 .pokeball-search {
-  max-width: 50px;
+  max-width: 40px;
   max-height: 50px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .input {
-  background-color: #EB7B87;
+  color: white;
+  background-color: #eb7b87;
   border: 0;
 }
 
 .input::placeholder {
-  color:#fff;
+  color: #fff;
   font-size: 1rem;
   width: 100%;
   margin: 20px 40px;
@@ -80,16 +94,26 @@ body {
   outline: none;
 }
 
-.Pokemon{
-  display:grid;
-  grid-template-columns:12em auto;
+.Pokemon {
+  display: grid;
+  grid-template-columns: 12em 10em 3em;
+  justify-content: center;
+  align-items: center;
+  margin-right: 14em;
 }
 
-.Pokemon img{
-  width:9em;
-  height:9em;
+#pokemonContainer {
+  border-radius: 50%;
+  border: 0.1em solid rgba(173, 170, 170, 0.5);
+  padding: 1.5em 1.5em;
+  margin: 1.2em;
 }
-.Pokemon h1{
+
+.Pokemon img {
+  width: 7em;
+  height: 7em;
+}
+.Pokemon h1 {
   margin-top: 1.75em;
 }
 .pokeImg {
@@ -112,26 +136,20 @@ body {
 
 .moveSet {
   display: flex;
-  margin: 0 100px;    
+  margin: 0 100px;
 }
 
 .card {
   border-radius: 10px;
-  background-color: #97C7AF;
+  background-color: #97c7af;
   font-size: 10px;
   margin: 15px 30px;
   padding: 15px 30px;
   transition: 0.5s;
 }
 
-
 .card:hover {
   background-color: springgreen;
-}
-
-.cell {
-  margin: 0 20px;
-  width: 90%;
 }
 
 h4 {
@@ -139,28 +157,36 @@ h4 {
   margin: 10px 0;
 }
 
-/* input[type=search],  */
-div.button {  
+input[type='search'],
+div.button {
   width: 100%;
   height: 35px;
-  /* -moz-box-sizing: border-box; */
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  
+  align-self: center;
 }
 
-/* input[type=search] {
+input[type='search'] {
   margin: 0;
   padding: 0 10px;
-    
+
   border: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-} */
-input[type=button] {
+}
 
-  box-shadow: 0 0 4px gray ;
+input[type='button'] {
+  box-shadow: 0 0 4px gray;
   padding: 1em;
-  background-color: #FB8B97;
+  background-color: #fb8b97;
+}
+
+input[type='search'],
+div.button {
+  width: 100%;
+  height: 35px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 div.button {
@@ -170,10 +196,19 @@ div.button {
   padding: 0 20px;
 
   color: #fff;
-  background-color: #FF1717;
-  
+  background-color: #ff1717;
+
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  
+
   white-space: nowrap;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.fa-plus-circle {
+  color: rgba(173, 170, 170, 0.8);
 }
