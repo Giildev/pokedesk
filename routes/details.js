@@ -100,7 +100,35 @@ function sendRequest(eventType) {
                     moveBox.appendChild(moveName)
                     moveBox.appendChild(moveDescription)
                    // moveBox.textContent = 'Move1 Move2 Move3'
-                    $('div.moveSet').appendChild(moveBox) 
+                   $('div.moveSet').appendChild(moveBox) 
+                   
+                   const searchMove= pokemonData.moves[0].move.url;
+                   fetch('searchMove')
+                    .then(res => res.json())
+                     .then(moveData => {
+                   console.log(moveData);
+                     });
+
+                     const searchMove= pokemonData.moves[1].move.url;
+                   fetch('searchMove')
+                    .then(res => res.json())
+                     .then(moveData => {
+                   console.log(moveData);
+                     });
+
+                     const searchMove= pokemonData.moves[2].move.url;
+                   fetch('searchMove')
+                    .then(res => res.json())
+                     .then(moveData => {
+                   console.log(moveData);
+                     });
+                                                                                //hasta aca tengo los tres movimientos 
+                  /*   if (searchMove.length <2) 
+                     .then{ 
+                       // document.createElement('p') si hago un lenght puedo concatenar la creacion delgit  <p>?? 
+                    document.write(typeof <p>) ???
+                    };
+  });*/
                 } 
             /* 
                 pokemonData.sprites.other["official-artwork"]["front-default"]
