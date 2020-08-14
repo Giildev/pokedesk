@@ -14,12 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   async function pokemon() {
     try {
       let pokemonShow = [];
-      let random;
-      for (i = 0; i < 10; i += 1) {
-        do {
-          random = Math.floor(Math.random() * 806 + 1);
-        } while (pokemonShow.includes(random));
-        pokemonShow.push(random);
+      for (i = 1; i < 11; i += 1) {
+          pokemonShow.push(i);
       }
 
       for (const pokemon of pokemonShow) {
