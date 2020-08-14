@@ -1,8 +1,22 @@
+// Reduce verbosity
+
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+
+const listeningButton = $('#search');
+const searchBarField = $('input');
+
+
 // funcionalidad malandra con localstorage
+
 document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('selected')) {
+  if (localStorage.getItem('selected') || window.location.search.match(/id=(\d+)/).length === 2) {
+
+    let grabbedId = window.location.search.match(/id=(\d+)/) === null ? false : window.location.search.match(/id=(\d+)/)[1];
+
     fetch(
-      `https://pokeapi.co/api/v2/pokemon/${localStorage.getItem('selected')}`
+      `https://pokeapi.co/api/v2/pokemon/${grabbedId || localStorage.getItem('selected')}`
     )
       .then((res) => res.json())
 
@@ -55,21 +69,24 @@ document.addEventListener('DOMContentLoaded', () => {
     pokemonData.moves[i].move.name
 */
 
-// Reduce verbosity
-
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
-
-const listeningButton = $('#search');
-const searchBarField = $('input');
 
 listeningButton.addEventListener('click', sendRequest);
-// searchBarField.addEventListener("keydown", sendRequest); TODO
+searchBarField.addEventListener("keydown", sendRequest);
 
-function sendRequest(eventType) {
-  eventType.preventDefault();
 
-  // TODO diferentiation of procedure by eventType
+function sendRequest(event) {
+
+  console.log(event);
+
+  if (event.type === 'click') {
+    event.preventDefault();
+  } else if (!(event.keyCode === 13)) {
+    return;
+  }
+
+
+
+
 
   fetch(
     `https://pokeapi.co/api/v2/pokemon/${searchBarField.value.toLowerCase()}`
