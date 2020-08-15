@@ -3,10 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const pokeSearch = document.getElementById('search');
 
-  pokeSearch.addEventListener('click', function () {
+  pokeSearch.addEventListener('click', async function () {
     const pokeName = document.getElementsByClassName('searchBar')[0]
       .firstElementChild.firstElementChild.value;
-    localStorage.setItem('selected', pokeName.toLowerCase());
+     const pokemon = pokeName.toLowerCase()
+     const response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+        );
+    const data = await response.json();
+    const pokeId = data.id
+    localStorage.setItem('selected', data.id);
     window.open('./details.html', '_self');
   });
 
@@ -44,8 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         pokemons.appendChild(pokemonText);
         pokemons.appendChild(descriptionBtn);
         showPoke.appendChild(pokemons);
+        const pokeId = data.id
         pokemons.addEventListener('click', function () {
-          localStorage.setItem('selected', pokeName.toLowerCase());
+          localStorage.setItem('selected', pokeId)
           window.open('./details.html', '_self');
         });
         showPoke.appendChild(pokemons);
