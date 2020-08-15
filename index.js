@@ -28,9 +28,8 @@ search.addEventListener(
     });
 
     pokemonMatch.map((data) => {
-      console.log(data);
-      var btn = document.createElement("pre"); // Create a <button> element
-      btn.innerHTML = data.name; // Insert text
+      var div = document.createElement("div"); // Create a <button> element
+      div.innerHTML = data.name; // Insert text
       document.body.appendChild(btn); // Append <button> to <body>
     });
   },
