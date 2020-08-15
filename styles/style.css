@@ -19,9 +19,8 @@ body {
 .title {
   font-size: 72px;
   font-weight: 400;
+  display: flex;
   justify-content: center;
-  text-align: center;
-  align-items: center;
   width: 95%;
 }
 
@@ -31,14 +30,9 @@ body {
 
 .homeButton {
   display: flex;
-  background-color: transparent;
   border: 0;
-  background-image: url(https://imgur.com/sQaP2n7);
-  background-repeat: no-repeat;
-  background-position: center;
   width: 2.2em;
   padding: 10px;
-  object-fit: contain;
   background-position: 8px 8px;
   margin-right: 50px;
 }
@@ -53,14 +47,11 @@ body {
 
 .searchBar {
   border-radius: 7px;
-  color: white;
   background-color: #eb7b87;
-  border: 0;
   margin: 30px 40px;
-  justify-items: center;
-  display: flex;
   width: 88%;
   height: 41px;
+  display: flex;
   justify-content: space-around;
 }
 
@@ -68,7 +59,6 @@ body {
   margin: 0;
   width: 98%;
   display: flex;
-  justify-content: baseline;
 }
 
 .pokeball-search {
@@ -78,9 +68,7 @@ body {
 }
 
 .input {
-  color: white;
   background-color: #eb7b87;
-  border: 0;
 }
 
 .input::placeholder {
@@ -96,10 +84,9 @@ body {
 
 .Pokemon {
   display: grid;
-  grid-template-columns: 12em 10em 3em;
-  justify-content: center;
+  grid-template-columns: 13em 11em 5em;
   align-items: center;
-  margin-right: 14em;
+  margin-right: 24em;
 }
 
 #pokemonContainer {
@@ -127,10 +114,9 @@ body {
 }
 
 .container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  justify-items: center;
   align-items: center;
 }
 
@@ -169,7 +155,6 @@ div.button {
 input[type='search'] {
   margin: 0;
   padding: 0 10px;
-
   border: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -191,16 +176,10 @@ div.button {
 
 div.button {
   line-height: 35px;
-
   margin: 0;
   padding: 0 20px;
-
-  color: #fff;
-  background-color: #ff1717;
-
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-
   white-space: nowrap;
 }
 
@@ -211,4 +190,10 @@ button {
 
 .fa-plus-circle {
   color: rgba(173, 170, 170, 0.8);
+}
+
+.descriptionImg {
+  padding: 1rem;
+  border: 0.1em solid rgba(173, 170, 170, 0.5);
+  border-radius: 50%;
 }
