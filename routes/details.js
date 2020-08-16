@@ -11,14 +11,16 @@ const searchBarField = $('input');
 // funcionalidad malandra con localstorage
 
 document.addEventListener('DOMContentLoaded', () => {
-
-   if(window.location.search.match(/id=(\d+)/) === null){
+ 
+   if(window.location.search.match(/id=(\d+)/) === null &&
+      window.location.search.match(/id=(\D+)/) === null){
       window.location.search = `id=${localStorage.getItem('selected')}`
    }
-
-    let grabbedId = window.location.search.match(/id=(\d+)/)[1]
-  
-    fetch(
+   let grabbedId = window.location.search.match(/id=(\d+)/) === null ? 
+     window.location.search.match(/id=(\D+)/)[1].toLowerCase() :
+     window.location.search.match(/id=(\d+)/)[1];
+     
+  fetch(
       `https://pokeapi.co/api/v2/pokemon/${grabbedId}`
     )
       .then((res) => res.json())
@@ -51,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       })
       .catch((error) => {
-        alert(`${localStorage.getItem('selected')} no es un pokemon válido`);
+        alert(`${grabbedId} no es un pokemon válido`);
       });
   /* 
       pokemonData.sprites.other["official-artwork"]["front-default"]
@@ -85,12 +87,10 @@ function sendRequest(event) {
   } else if (!(event.keyCode === 13)) {
     return;
   }
-
   fetch(
     `https://pokeapi.co/api/v2/pokemon/${searchBarField.value.toLowerCase()}`
   )
     .then((res) => res.json())
-
     .then((pokemonData) => {
      window.location.search = `id=${pokemonData.id}`;
      })
