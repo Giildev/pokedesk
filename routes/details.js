@@ -50,7 +50,33 @@ document.addEventListener('DOMContentLoaded', () => {
           pokemonData.moves[i].move.name[0].toUpperCase() +
           pokemonData.moves[i].move.name.substring(1);
         moveName.textContent = move;
-        moveDescription.textContent = 'Move1 Move2 Move3';
+        const url = pokemonData.moves[0].move.url;
+        console.log(url)
+        fetch(url).then(res=>res.json()).then(moveData=>{
+           console.log(moveData)
+          const acc = moveData.accuracy
+          const flavorText = moveData.flavor_text_entries[0].flavor_text
+          const damageClass = moveData.damage_class.name
+          const effect = moveData.effect_entries[0].effect
+          const power = moveData.power
+          const pp = moveData.pp
+          const priority= moveData.priority
+          const target = moveData.target.name
+          const type = moveData.type.name
+          moveDescription.innerHTML =`
+           <p>${flavorText}</p>
+           <p>Effect: ${effect}</p>
+          <p>Accuaricy:${acc}</p>
+         <p>Damage class: ${damageClass}</p>
+          <p>Power: ${power}</p>
+          <p>Priority; ${priority}</p>
+          <p>Target: ${target}</p>
+          <p>Type: ${type}</p>
+          `
+          
+       }).catch((error) => {
+      console.log(error);
+    })
         moveBox.appendChild(moveName);
         moveBox.appendChild(moveDescription);
         $('div.moveSet').appendChild(moveBox);
