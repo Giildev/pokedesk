@@ -32,9 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const pokemonName =
         pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1);
-
+      if(pokemonData.id = 778){
+         $('div.descriptionImg img').src =
+        `https://img.pokemondb.net/artwork/large/mimikyu.jpg`
+      }else{
       $('div.descriptionImg img').src =
-        pokemonData.sprites.other['official-artwork']['front_default'];
+        `https://img.pokemondb.net/artwork/large/${pokemonData.name}.jpg`
+      }
       $('div.descriptionImg img').alt = 'Pokemon \n Image';
       $('.Name').textContent = pokemonName;
       $('.Number').textContent = `#${pokemonData.id}`;
