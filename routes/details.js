@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const pokemonName =
         pokemonData.name[0].toUpperCase() + pokemonData.name.substring(1);
-      if(pokemonData.id = 778){
+      if(pokemonData.id === 778){
          $('div.descriptionImg img').src =
         `https://img.pokemondb.net/artwork/large/mimikyu.jpg`
       }else{
